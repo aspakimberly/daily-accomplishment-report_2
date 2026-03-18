@@ -1,0 +1,205 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  min-height: 100%;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  color: #fff;
+  background:
+    linear-gradient(rgba(6, 60, 112, 0.9), rgba(6, 60, 112, 0.9)),
+    url("../images/dict_office.png") center center / cover no-repeat;
+}
+
+.signin-page {
+  position: relative;
+  min-height: 100vh;
+  padding: 36px 28px 24px;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 24% 44%, rgba(255, 255, 255, 0.18), transparent 18%),
+    linear-gradient(90deg, rgba(4, 39, 73, 0.18) 0%, rgba(4, 39, 73, 0.04) 100%);
+}
+
+.signin-layout {
+  position: relative;
+  z-index: 1;
+  width: min(1180px, 100%);
+  min-height: calc(100vh - 92px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(360px, 1.05fr) 1px minmax(360px, 0.95fr);
+  align-items: center;
+  gap: 42px;
+}
+
+.brand-panel,
+.signin-panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.brand-panel {
+  align-items: center;
+  text-align: center;
+}
+
+.logo-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 26px;
+  margin-bottom: 22px;
+}
+
+.logo-glow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+}
+
+.logo-glow img {
+  width: 108px;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 0 10px rgba(255, 255, 255, 0.82))
+    drop-shadow(0 0 18px rgba(255, 255, 255, 0.45));
+}
+
+.brand-title {
+  max-width: 620px;
+  font-size: clamp(1.75rem, 2.5vw, 2.65rem);
+  line-height: 1.22;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.brand-divider {
+  width: 1px;
+  align-self: stretch;
+  background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.42) 16%, rgba(255, 255, 255, 0.42) 84%, transparent 100%);
+}
+
+.signin-panel {
+  align-items: flex-start;
+}
+
+.signin-copy h2 {
+  font-size: clamp(2rem, 2.8vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.feedback {
+  margin-bottom: 12px;
+  font-size: 0.82rem;
+}
+
+.feedback-success {
+  color: #d9f99d;
+}
+
+.feedback-error {
+  color: #fecaca;
+}
+
+.signin-form {
+  width: min(500px, 100%);
+}
+
+.email-input {
+  width: 100%;
+  height: 56px;
+  border: 0;
+  border-radius: 6px;
+  padding: 0 18px;
+  font: inherit;
+  font-size: 0.95rem;
+  color: #24415d;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 34px rgba(7, 33, 59, 0.2);
+}
+
+.otp-button {
+  margin-top: 8px;
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 0;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  font-size: 0.74rem;
+  cursor: pointer;
+}
+
+.otp-button span {
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.signin-footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+@media (max-width: 920px) {
+  .signin-layout {
+    min-height: auto;
+    padding: 36px 0;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .brand-divider {
+    display: none;
+  }
+
+  .signin-panel {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 560px) {
+  .signin-page {
+    padding: 24px 16px 18px;
+  }
+
+  .logo-row {
+    gap: 16px;
+  }
+
+  .logo-glow {
+    width: 88px;
+    height: 88px;
+  }
+
+  .logo-glow img {
+    width: 84px;
+  }
+
+  .signin-form {
+    width: 100%;
+  }
+}
+
